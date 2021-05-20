@@ -1,8 +1,8 @@
 #include "input.h"
 
 void setup() {
-  connect();
-
+  wlan();
+  initSensor();
 }
 
 void loop() {

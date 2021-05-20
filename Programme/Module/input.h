@@ -6,7 +6,7 @@
 const char* ssid = "";
 const char* password = "";
 
-void connect() {
+void wlan() {
   //Initalisieren des Seriellen Monitors
   Serial.begin(115200);
   delay(800);
@@ -34,19 +34,22 @@ void connect() {
   Serial.println("Connected");  
 }
 
+void initSensor() {
+  pinMode(ultraschalltrigger, OUTPUT);
+  pinMode(ultraschallecho, INPUT);
+}
 int entfernung(){
-    long entfernung=0;
-    long zeit=0;
-  
-    digitalWrite(ultraschalltrigger, LOW);
-    delayMicroseconds(3);
-    noInterrupts();
-    digitalWrite(ultraschalltrigger, HIGH); //Trigger Impuls 10 us
-    delayMicroseconds(10);
-    digitalWrite(ultraschalltrigger, LOW);
-    zeit = pulseIn(ultraschallecho, HIGH); // Echo-Zeit messen
-    interrupts();
-    zeit = (zeit/2); // Zeit halbieren
-    entfernung = zeit / 29.1; // Zeit in Zentimeter umrechnen
-    return(entfernung);
-  }
+  long entfernung=0;
+  long zeit=0;
+  digitalWrite(ultraschalltrigger, LOW);
+  delayMicroseconds(3);
+  noInterrupts();
+  digitalWrite(ultraschalltrigger, HIGH); //Trigger Impuls 10 us
+  delayMicroseconds(10);
+  digitalWrite(ultraschalltrigger, LOW);
+  zeit = pulseIn(ultraschallecho, HIGH); // Echo-Zeit messen
+  interrupts();
+  zeit = (zeit/2); // Zeit halbieren
+  entfernung = zeit / 29.1; // Zeit in Zentimeter umrechnen
+  return(entfernung);
+}
