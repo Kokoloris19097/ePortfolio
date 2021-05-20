@@ -1,4 +1,4 @@
-Ladet euch bitte entweder die [Arduino IDE](https://www.arduino.cc/en/software) herunter oder verwendet das Setup in meinem Repository.
+Ladet euch bitte entweder die [Arduino IDE](https://www.arduino.cc/en/software) herunter.
 Für eine Übersicht der Möglichen Befehle gibt es die [Arduino References](https://www.arduino.cc/reference/de/).
 
 ### Checkliste Portfolio
