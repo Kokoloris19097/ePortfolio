@@ -15,9 +15,9 @@ Für eine Übersicht der Möglichen Befehle gibt es die [Arduino References](htt
 [ESP32](https://www.espressif.com/en/products/socs/esp32) <br />
 
 ### Weitere Links:
+> Nicht Teil des ePortfolios
 [Espressif](https://www.espressif.com/en/products/socs/esp32) <br />
 [Emulator](https://github.com/espressif/qemu) <br />
-> Nicht Teil des ePortfolios
 
 ### Biblioteken
 (Integrieren wir im Praxisteil) <br />
