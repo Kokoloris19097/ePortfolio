@@ -8,21 +8,12 @@ void setup() {
   pinMode(ultraschalltrigger, OUTPUT);
   pinMode(ultraschallecho, INPUT);
   Serial.begin(115200);//Test
-  delay(800);
-  long entfernung=0;
-  long zeit=0;
+  delay(800);  
 }
-
-// Funktionen
-    int entfernung(){
-    
-  
-    
-    return(entfernung);
-  }
-
 //Main
 void loop() {
+  long entfernung=0;
+  long zeit=0;
   digitalWrite(ultraschalltrigger, LOW);
   delayMicroseconds(3);
   noInterrupts();
@@ -33,8 +24,8 @@ void loop() {
   interrupts();
   zeit = (zeit/2); // Zeit halbieren
   entfernung = zeit / 29.1; // Zeit in Zentimeter umrechnen
-  String out = "Entfernung: " + entfernung;
-  Serial.println(out);
+  Serial.print("Entfernung: ");
+  Serial.println(entfernung);
   delay(1000);  
 }
   
