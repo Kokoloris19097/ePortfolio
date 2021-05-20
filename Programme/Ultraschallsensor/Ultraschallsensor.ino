@@ -1,27 +1,14 @@
-/* Name: Steuerung ESP
- * Projekt: LazyPlants
- * Erstelldatum:  01.11.2020 18:00
- * Änderungsdatum: 11.11.2020 09:30
- * Version: 0.0.1
- * History:
- */
- 
 //Declarationen
 
   //Sensoren 
   #define ultraschalltrigger 34 // Arduino Pin an HC-SR04 Trig
   #define ultraschallecho 35    // Arduino Pin an HC-SR04 Echo
 
-  //weitere Parameter
-  #define Tankhoehe 30 //Angabe in cm bei denen der Sensor den Tank als leer erkennt
-
-  #include <Esp.h>
-
-
 void setup() {
   pinMode(ultraschalltrigger, OUTPUT);
   pinMode(ultraschallecho, INPUT);
   Serial.begin(115200);//Test
+  delay(800);
 }
 
 // Funktionen
@@ -41,18 +28,12 @@ void setup() {
     entfernung = zeit / 29.1; // Zeit in Zentimeter umrechnen
     return(entfernung);
   }
-  
-  int fuellsstand(){
-    int Value = entfernung();
-    return (Value/Tankhoehe *100);
-  }
-
 
 //Main
 void loop() {
   Serial.print("Entfernung: ");
   Serial.println(entfernung());
   Serial.println();
-  delay(2000);  
+  delay(1000);  
 }
   
