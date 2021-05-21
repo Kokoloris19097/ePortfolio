@@ -1,12 +1,3 @@
-/* Name: Steuerung Test
- * Projekt: LazyPlants
- * Erstelldatum:  10.11.2020 18:00
- * Änderungsdatum: 16.11.2020 16:30
- * Version: 0.0.3
- * History:
- */
-
-
 #include "Module.h"
 #include <WiFi.h>
 #include <HTTPClient.h>
